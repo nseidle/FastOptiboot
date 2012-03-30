@@ -2,11 +2,17 @@ FastOptiboot is a variant of Optiboot. The largest change is the ability
 to change the communication speed on the fly. This allows us to bootload at
 much higher datarates. 2 mega bits per second is the maximum for the ATmega328
 and works well over USB. This allows for the entire 31k code space to be
-loaded in under 6 seconds.
+loaded in under 6 seconds. FOB is transparent to avrdude and Arduino IDE. The 
+downside is that it occupies the 1K code space instead of the original 512
+byte space.
 
 FastOptiboot also extends the STK500 commands to support company identifiers,
 board identifiers and crystal frequencies. This allows higher level software
 (such as ModKit) to better identify the board being used.
+
+FastOptiboot works with Ardentify. Please see https://github.com/nseidle/Ardentify
+for an example Processing Sketch that utilizes the extended commands and faster
+bootload speeds.
 
 Imagine if there was a database of all Ar* and *uino boards. Wouldn't it be
 great if you could ask the board what it was and find out things like bootloader
